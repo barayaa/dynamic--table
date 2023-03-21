@@ -1,0 +1,19 @@
+<div class="container py-4">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1>Reusable DataTable</h1>
+
+
+            <app-my-table 
+            [HeadArray]="headArray" 
+            [loading]="loading"
+            [Data]="userList" 
+            (onEdit)="Edit($event)"
+            [showEditButton]="true"
+            [showSpinner]="true"
+            (onDelete)="onDelete($event)" 
+            [showDeleteButton]="true">
+            </app-my-table>
+        </div>
+    </div>
+</div>
