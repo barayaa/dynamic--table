@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-my-table',
+  selector: 'aw-table',
   templateUrl: './my-table.component.html',
   styleUrls: ['./my-table.component.css']
 })
@@ -14,7 +14,7 @@ export class MyTableComponent {
   @Input() showDeleteButton: boolean = true;
   @Input() showSpinner: boolean = false
   @Input() loading: boolean = false;
-  @Input() condition: boolean = true;
+  @Input() pageSize: number = 5
   @Output() onEdit =  new EventEmitter<any>() 
   @Output() onDelete =  new EventEmitter<any>();
 

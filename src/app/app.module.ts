@@ -17,6 +17,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { UserDetailComponent } from './user-detail/user-detail.component';
 
 
 registerLocaleData(en);
@@ -25,7 +26,8 @@ registerLocaleData(en);
   declarations: [
     AppComponent,
     UsersComponent,
-    MyTableComponent
+    MyTableComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,

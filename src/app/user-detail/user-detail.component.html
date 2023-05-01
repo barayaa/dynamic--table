@@ -1,0 +1,39 @@
+<!-- {{ userDetail ? userDetail.name : 'Loading...' }} -->
+<div class="container py-4">
+    <div class="card">
+        <div class="card-body text-center">
+          <div class="row">
+            <div class="col-sm-6">
+              <h5 class="card-title">Nom :</h5>
+            </div>
+            <div class="col-sm-6">
+              <h5 class="card-title">{{ userDetail ? userDetail.name : 'Loading...' }}</h5>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <h5 class="card-title">Email :</h5>
+            </div>
+            <div class="col-sm-6">
+              <h5 class="card-title">{{ userDetail ? userDetail.email : 'Loading...' }}</h5>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <h5 class="card-title">Téléphone :</h5>
+            </div>
+            <div class="col-sm-6">
+              <h5 class="card-title">{{ userDetail ? userDetail.phone : 'Loading...' }}</h5>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <h5 class="card-title">Entreprise :</h5>
+            </div>
+            <div class="col-sm-6">
+              <h5 class="card-title">{{ userDetail ? userDetail.company.name : 'Loading...' }}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
