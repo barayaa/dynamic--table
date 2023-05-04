@@ -1,6 +1,7 @@
 # Utiliser une image de node.js comme base
 # FROM node:16-alpine
 FROM node:18.16.0-bullseye-slim
+ENV NODE_ENV production
 
 # Définir le répertoire de travail
 WORKDIR /app
