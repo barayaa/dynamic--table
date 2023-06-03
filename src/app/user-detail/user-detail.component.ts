@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { UserService } from '../service/user.service';
+import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../model/user';
+import { HttpService } from '../service/http.service';
 
 @Component({
   selector: 'app-user-detail',
@@ -12,19 +12,26 @@ export class UserDetailComponent {
 
   userId!: number;
   userDetail! : User;
-  constructor(private route: ActivatedRoute,
-     private userService: UserService) { }
+  constructor(private route: ActivatedRoute,private router : Router,
+    private httpService: HttpService
+    ) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.userId = +params['id'];
       console.log(this.userId); 
     });
-    this.userService.getUserById(this.userId).subscribe(user => {
-      this.userDetail = user;
-      console.log(this.userDetail.company?.name);
-      
-    });
+    this.httpService.get<User>('http://localhost:3000/user/'+this.userId).subscribe(
+      (response: any) => {
+        console.log(response);
+        this.userDetail = response;
+      }
+    )
+  }
+
+
+  bcakToUserList(){
+    this.router.navigate(['/users']);
   }
 
 

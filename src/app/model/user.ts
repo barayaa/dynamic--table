@@ -1,15 +1,14 @@
 export interface User {
     id:number;
-    address:string;
-    canDelete: string ;
-    company: Company;
     email:string;
-    name: string;
-    phone: string;
-    username: string;
-    website: string;
+    nom: string;
+    telephone: string;
+    prenom: string;
+    rapports: Rapport;
+ 
 }
-export interface Company {
-    name: string;
-   
+export interface Rapport {
+    type:string
+    rapport: string
+    date: string;
   }

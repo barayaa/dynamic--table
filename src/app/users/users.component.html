@@ -2,6 +2,14 @@
     <div class="row">
         <div class="col-md-12 text-center">
             <h1>Reusable DataTable</h1>
+                <div class="col" style="text-align: right; ">
+                    <button
+                    (click)="add()"
+                    style="margin-right: 5px;"
+                    nz-button nzType="default" nzShape="circle" nz-tooltip nzTooltipTitle="Supprimer">
+                    <i nz-icon nzType="plus-square" theme="outline"></i>
+                  </button>            
+                </div>
             <aw-table 
             [HeadArray]="headArray" 
             [loading]="loading"
@@ -16,3 +24,42 @@
         </div>
     </div>
 </div>
+
+<nz-modal [(nzVisible)]="isVisible" [nzWidth]="700"  nzTitle="Custom Modal Title" (nzOnCancel)="handleCancel()" >
+   <form [formGroup]="addUserForm" *nzModalContent>
+    <div class="row">
+        <div class="col-md-6">
+            <nz-form-item>
+                <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="nom">Nom</nz-form-label>
+                <nz-form-control [nzSm]="14" [nzXs]="24">
+                    <input nz-input formControlName="nom" id="nom" type="text" placeholder="nom" />
+                </nz-form-control>
+            </nz-form-item>
+
+            <nz-form-item>
+                <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="prenom">Prenom</nz-form-label>
+                <nz-form-control [nzSm]="14" [nzXs]="24">
+                    <input nz-input formControlName="prenom" id="prenom" type="text" placeholder="prenom" />
+                </nz-form-control>
+            </nz-form-item>
+
+           
+        </div>
+        <div class="col-md-6">
+            <nz-form-item>
+                <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email">Email</nz-form-label>
+                <nz-form-control [nzSm]="14" [nzXs]="24">
+                    <input nz-input formControlName="email" id="email" type="text" placeholder="email" />
+                </nz-form-control>
+            </nz-form-item>
+
+            <nz-form-item>
+                <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="telephone">Telephone</nz-form-label>
+                <nz-form-control [nzSm]="14" [nzXs]="24">
+                    <input nz-input formControlName="telephone" id="telephone" type="text" placeholder="telephone" />
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+    </div>
+   </form>
+</nz-modal> 

@@ -18,8 +18,6 @@ export class MyTableComponent {
   @Output() onEdit =  new EventEmitter<any>() 
   @Output() onDelete =  new EventEmitter<any>();
 
-//   showEditButton = true;
-// showDeleteButton = true;
   constructor() { }
 
   ngOnInit(): void {}
@@ -51,4 +49,10 @@ export class MyTableComponent {
     }
     return value;
   }
+
+  // write a function to emit item to parent component
+  getEdit(item: any) {
+    this.onEdit.emit(item);
+  }
+  
 }

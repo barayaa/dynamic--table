@@ -9,6 +9,10 @@ const routes: Routes = [
         pathMatch: 'full',
         component: UsersComponent
       },
+      {
+        path: 'users',
+        component: UsersComponent
+      },
   {
 
     path: 'user-detail/:id',

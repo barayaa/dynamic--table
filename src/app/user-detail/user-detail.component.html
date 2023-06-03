@@ -7,7 +7,7 @@
               <h5 class="card-title">Nom :</h5>
             </div>
             <div class="col-sm-6">
-              <h5 class="card-title">{{ userDetail ? userDetail.name : 'Loading...' }}</h5>
+              <h5 class="card-title">{{ userDetail ? userDetail.nom : 'Loading...' }}</h5>
             </div>
           </div>
           <div class="row">
@@ -23,17 +23,24 @@
               <h5 class="card-title">Téléphone :</h5>
             </div>
             <div class="col-sm-6">
-              <h5 class="card-title">{{ userDetail ? userDetail.phone : 'Loading...' }}</h5>
+              <h5 class="card-title">{{ userDetail ? userDetail.telephone : 'Loading...' }}</h5>
             </div>
           </div>
           <div class="row">
             <div class="col-sm-6">
               <h5 class="card-title">Entreprise :</h5>
             </div>
-            <div class="col-sm-6">
-              <h5 class="card-title">{{ userDetail ? userDetail.company.name : 'Loading...' }}</h5>
-            </div>
           </div>
         </div>
       </div>
   </div>
+
+  <!-- button retour -->
+  <div class="container py-4">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <button nz-button nzType="default" nzShape="circle" nz-tooltip nzTooltipTitle="Retour" (click)="bcakToUserList()">
+          <i nz-icon nzType="arrow-left" theme="outline"></i>
+        </button>
+      </div>
+    </div>

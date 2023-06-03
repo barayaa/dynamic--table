@@ -1,22 +1,27 @@
-# Utiliser une image de node.js comme base
-# FROM node:16-alpine
-FROM node:18.16.0-bullseye-slim
-ENV NODE_ENV production
+#Stage: 2 
+FROM node:alpine as build
 
-# Définir le répertoire de travail
 WORKDIR /app
 
-# Copier l'ensemble des fichiers de l'application dans le container
 COPY . .
 
-# Installer les dépendances
-# RUN yarn install
-RUN npm ci --only=production
+RUN npm install --force
 
-# Exposer le port 4200
-EXPOSE 4200
-
-# Démarrer l'application Angular
-CMD ["yarn", "start"]
+RUN npm run build --prod
 
 
+#Stage: 2 
+FROM nginx:alpine
+COPY --from=build /app/dist/dynamic-table /usr/share/nginx/html
+
+
+# WORKDIR /app
+# COPY . /app
+
+# RUN yarn install 
+
+# RUN yarn run build --prod
+
+# #Stage: 2 
+# FROM nginx:alpine
+# COPY --from=build /app/dist/dynamic-table /usr/share/nginx/html

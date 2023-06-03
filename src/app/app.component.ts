@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NaviationServiceService } from './service/naviation-service.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'dynamic-table';
+
+  constructor(
+    private naviationServiceService: NaviationServiceService
+  ){}
+
+  ngOnInit(): void {
+    this.naviationServiceService.disableBrowserBackButton();
+  }
 }
